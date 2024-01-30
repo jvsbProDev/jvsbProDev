@@ -1,4 +1,4 @@
-<h1 align="center">utf-8 0x3b<br>
+<h1 align="center">Software Developer<br>
 <img src="banner.gif"><br>
 </h1>
 
