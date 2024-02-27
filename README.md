@@ -1,4 +1,4 @@
-<h1 align="center">Jovi Van Shannon Belnas<br>
+<h1 align="center">Jovi Van Shannon Belnas<br><br>
 <img src="banner.gif"><br>
 </h1>
 
