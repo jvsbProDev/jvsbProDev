@@ -1,6 +1,6 @@
 <img src="basement-hacking.gif"><br>
 
-&nbsp;[![Typing SVG](http://readme-typing-svg.herokuapp.com?color=ff0000&size=36&multiline=true&width=970&height=65&lines=Hello+there%2C+my+fellow+anonymous+%3Chacker%2Fs%3E!)](https://git.io/typing-svg)
+&nbsp;[![Typing SVG](http://readme-typing-svg.herokuapp.com?color=ff0000&size=36&multiline=true&width=970&height=65&lines=Hello+there%2C+my+fellow+Software+%3CDeveloper%2Fs%3E!)](https://git.io/typing-svg)
 
 ## Disclaimer :warning:
 <p align="center">:dart: This is for educational purposes only! :closed_book:</p>
