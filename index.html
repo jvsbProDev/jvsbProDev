@@ -120,11 +120,15 @@
             z-index: 1000;
             font-size: 14px;
             white-space: nowrap;
-            overflow-x: auto;
+            /* Keep the ticker a single clipped line across desktop and mobile. */
+            overflow: hidden;
+            line-height: 16px;
         }
         marquee.foonathanPrinsley b {
             margin-right: 40px;
             display: inline-block;
+            white-space: nowrap;
+            vertical-align: top;
         }
 
         /* ========== STYLES FROM intro.html (Terminal & Accordion) ========== */
@@ -306,13 +310,27 @@
             background: radial-gradient(circle at 30% 10%, rgba(0,40,0,0.4), transparent);
         }
 
-        /* responsive tweaks */
+        /* MOBILE PATCH: preserve the desktop ticker and fit the hero on phones. */
         @media (max-width: 768px) {
+            .hero-wrapper {
+                padding: 18px 12px 8px;
+            }
+            .container {
+                margin: 12px auto;
+                padding: 0 12px;
+            }
             .othermes_nprinsh {
-                font-size: 28px;
+                font-size: 26px;
+                line-height: 1.3;
             }
             h1.nprinsleyy {
                 font-size: 28px !important;
+                line-height: 1.35;
+            }
+            .hero-wrapper .hubungi_prinsh {
+                font-size: 20px !important;
+                margin: 8px 0 6px !important;
+                line-height: 1.4;
             }
             .header .token.grasstext {
                 font-size: 1rem;
@@ -325,19 +343,34 @@
             .command {
                 font-size: 0.8rem;
             }
+            /* Do not use height:auto or white-space:normal here:
+               they made the quotes wrap into a tall floating block. */
             marquee.foonathanPrinsley {
-                font-size: 10px;
-                height: auto;
-                white-space: normal;
-                line-height: 1.4;
+                height: 34px;
+                font-size: 11px;
+                white-space: nowrap;
+                overflow: hidden;
+                line-height: 16px;
             }
         }
         @media (max-width: 480px) {
-            h2 {
-                font-size: 18px !important;
+            h1.nprinsleyy {
+                font-size: clamp(18px, 5.2vw, 23px) !important;
             }
             .othermes_nprinsh {
-                font-size: 22px;
+                font-size: clamp(16px, 4.4vw, 20px);
+                text-wrap: balance; /* Prevent a lone !!! line on narrow phones. */
+            }
+            .hero-wrapper h2 {
+                font-size: clamp(14px, 3.8vw, 17px) !important;
+                line-height: 1.4;
+            }
+            .hero-wrapper .hubungi_prinsh {
+                font-size: 18px !important;
+            }
+            .header .token.grasstext {
+                font-size: 0.9rem;
+                gap: 10px;
             }
         }
     </style>
