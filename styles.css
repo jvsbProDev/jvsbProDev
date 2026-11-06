@@ -1,0 +1,402 @@
+/* ========== GLOBAL RESET & BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Calibri, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+			background:
+				linear-gradient(
+					rgba(0, 0, 0, 0.75),
+					rgba(0, 0, 0, 0.75)
+				),
+				url("./assets/basement-hacking.gif");
+			background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #000;
+        }
+
+        /* Main content wrapper */
+        main {
+            flex: 1;
+            padding-bottom: 60px; /* space for marquee */
+        }
+
+        /* ========== STYLES FROM index.html (Hero Section) ========== */
+        img.left, img.center, img.right {
+            opacity: 100%;
+        }
+
+        h1, h2 {
+            margin-top: 0.3em;
+            margin-bottom: 0.3em;
+        }
+
+        h1.nprinsleyy {
+            font-family: "Press Start 2P", monospace;
+            color: #dbd9d9;
+        }
+
+        h2 {
+            font-family: 'Silkscreen', monospace;
+            color: #dbd9d9;
+        }
+
+        .hubungi_prinsh {
+            color: #00eb00;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+        .hubungi_prinsh:hover {
+            color: #3a86ff;
+            text-decoration: underline;
+        }
+
+        .othermes_nprinsh {
+            color: #ff3333;
+            font-family: 'Silkscreen', monospace;
+            font-size: 44px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Rainbow animated text */
+        .nprinsley-text-rainbowan {
+            background: linear-gradient(to right, #ff0000 10%, #ffa000 20%, #ffd400 30%, #78ff00 40%, #00ffc0 50%, #0069ff 60%, #6d03ff 70%, #ff00ba 80%, #ff6ee0 90%, #f00 100%);
+            background-size: 200% auto;
+            color: #000;
+            background-clip: border-box;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: animate 3s linear infinite;
+        }
+
+        /* Blinking effect */
+        .nprinsley-detaxt {
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes animate {
+            to { background-position: 200% center; }
+        }
+
+        /* Marquee footer */
+        marquee.foonathanPrinsley {
+            position: fixed;
+            width: 100%;
+            bottom: 0px;
+            font-family: 'Silkscreen', monospace;
+            height: 34px;
+            color: white;
+            left: 0px;
+            border-top: 2px solid #00eb00;
+            padding: 8px 5px;
+            background-color: #000;
+            z-index: 1000;
+            font-size: 14px;
+            white-space: nowrap;
+            /* Keep the ticker a single clipped line across desktop and mobile. */
+            overflow: hidden;
+            line-height: 16px;
+        }
+        marquee.foonathanPrinsley b {
+            margin-right: 40px;
+            display: inline-block;
+            white-space: nowrap;
+            vertical-align: top;
+        }
+
+        /* ========== STYLES FROM intro.html (Terminal & Accordion) ========== */
+        :root {
+            --white-text: #e9e9e9;
+            --grass-text: #a6e22e;
+            --blue-text: #2A87D0;
+            --orange-text: #ff9d00;
+            --red-text: #ff5f56;
+            --yellow-text: #ffbd2e; 
+            --green-text: #27c93f;
+            --navy-text: #3aa0ee;
+            --terminal-bg: #1e1e1e;
+            --terminal-header: #2d2d2d;
+            --terminal-border: #3c3c3c;
+        }
+
+        /* Container for tutorial sections */
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 0 20px;
+        }
+
+        /* Accordion header */
+        .header {
+            cursor: pointer;
+            background-color: #111;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            margin-bottom: 8px;
+            border: 1px solid #2c2c2c;
+        }
+        .header .token.grasstext {
+            background-color: #0e1a34;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 12px;
+            width: 100%;
+            text-align: left;
+            color: var(--grass-text);
+            font-weight: bold;
+            font-size: 1.3rem;
+            font-family: 'Silkscreen', monospace;
+        }
+        .header .token.grasstext::after {
+            content: "▼";
+            float: right;
+            font-size: 1rem;
+            color: var(--grass-text);
+            transition: transform 0.2s;
+        }
+        .header[aria-expanded="true"] .token.grasstext::after {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            background-color: #151515;
+            padding: 24px;
+            border-top: 1px solid #313244;
+            display: none;
+            border-radius: 0 0 12px 12px;
+            border-left: 4px solid #27c93f;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .accordion-content p {
+            margin: 15px 0;
+            line-height: 1.5;
+            color: #ddd;
+        }
+
+        /* Terminal components */
+        .terminal-container {
+            width: 100%;
+            margin: 20px auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 0px 12px rgba(0, 255, 0, 0.1);
+            background-color: var(--terminal-bg);
+        }
+        .terminal-header {
+            background: var(--terminal-header);
+            padding: 8px 12px;
+            color: var(--white-text);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            font-family: monospace;
+        }
+        .terminal-buttons {
+            display: flex;
+            gap: 6px;
+        }
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .red { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green { background: #27c93f; }
+        .terminal-body {
+            overflow-x: auto;
+            background: var(--terminal-bg);
+            padding: 15px;
+            color: var(--white-text);
+            font-size: 15px;
+            text-align: left;
+        }
+        .terminal-code {
+            color: var(--white-text);
+            white-space: pre;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            display: block;
+            margin: 4px 0;
+            line-height: 1.5;
+        }
+        .command {
+            background-color: #2a2a2a;
+            color: #a6e22e;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-family: 'Fira Code', monospace;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        /* Token styles */
+        .token.whitetext { color: var(--white-text); }
+        .token.orangetext { color: var(--orange-text); }
+        .token.whitebold { color: var(--white-text); font-weight: bold; }
+        .token.grasstext { color: var(--grass-text); font-weight: bold; }
+        .token.bluetext { color: var(--blue-text); font-weight: bold; }
+        .token.redtext { color: var(--red-text); }
+        .token.yellowtext { color: var(--yellow-text); }
+        .token.greentext { color: var(--green-text); }
+        .token.navytext { color: var(--navy-text); }
+
+        /* Table styles (responsive) */
+        .table-scroll {
+            overflow-x: auto;
+            max-width: 100%;
+            margin: 20px 0;
+        }
+        .table-scroll table, table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #0f0f0f;
+        }
+        .table-scroll th, .table-scroll td, th, td {
+            border: 1px solid #444;
+            padding: 10px 12px;
+            text-align: left;
+            color: #e0e0e0;
+        }
+        th {
+            background-color: #222;
+            font-weight: 600;
+        }
+        td {
+            background-color: #181818;
+        }
+
+        /* Fix image container (empty, kept for structural compatibility) */
+        .image-container {
+            display: none;
+        }
+
+        /* Hero section specific styles */
+        /* .hero-wrapper {
+            text-align: center;
+            padding: 30px 20px 20px;
+            background: radial-gradient(circle at 30% 10%, rgba(0,40,0,0.4), transparent);
+        } */
+
+        /* MOBILE PATCH: preserve the desktop ticker and fit the hero on phones. */
+        @media (max-width: 768px) {
+            .hero-wrapper {
+                padding: 18px 12px 8px;
+            }
+            .container {
+                margin: 12px auto;
+                padding: 0 12px;
+            }
+            .othermes_nprinsh {
+                font-size: 26px;
+                line-height: 1.3;
+            }
+            h1.nprinsleyy {
+                font-size: 28px !important;
+                line-height: 1.35;
+            }
+            .hero-wrapper .hubungi_prinsh {
+                font-size: 20px !important;
+                margin: 8px 0 6px !important;
+                line-height: 1.4;
+            }
+            .header .token.grasstext {
+                font-size: 1rem;
+                padding: 12px 16px;
+            }
+            .terminal-body {
+                font-size: 12px;
+                padding: 12px;
+            }
+            .command {
+                font-size: 0.8rem;
+            }
+            /* Do not use height:auto or white-space:normal here:
+               they made the quotes wrap into a tall floating block. */
+            marquee.foonathanPrinsley {
+                height: 34px;
+                font-size: 11px;
+                white-space: nowrap;
+                overflow: hidden;
+                line-height: 16px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1.nprinsleyy {
+                font-size: clamp(18px, 5.2vw, 23px) !important;
+            }
+            .othermes_nprinsh {
+                font-size: clamp(16px, 4.4vw, 20px);
+                text-wrap: balance; /* Prevent a lone !!! line on narrow phones. */
+            }
+            .hero-wrapper h2 {
+                font-size: clamp(14px, 3.8vw, 17px) !important;
+                line-height: 1.4;
+            }
+            .hero-wrapper .hubungi_prinsh {
+                font-size: 18px !important;
+            }
+            .header .token.grasstext {
+                font-size: 0.9rem;
+                gap: 10px;
+            }
+        }
+
+
+/* ========== MODULAR SITE ENHANCEMENTS ========== */
+html { scroll-behavior: smooth; }
+body { color: #e9e9e9; padding-bottom: 36px; }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid #a6e22e;
+  outline-offset: 4px;
+}
+.page-content { width: 100%; }
+.hero-wrapper { padding-top: clamp(32px, 6vw, 84px); }
+.hero-inner { max-width: 1100px; margin: 0 auto; }
+.hero-wrapper h1 { overflow-wrap: anywhere; }
+.eyebrow { color: #9ad56c; font: 700 .85rem 'Fira Code', monospace; letter-spacing: .12em; text-transform: uppercase; }
+.home-panel { max-width: 800px; padding: 0 18px; margin: 22px auto 50px; }
+.home-panel .terminal-container { border: 1px solid #2c4640; }
+.home-panel p { color: #d6d6d6; line-height: 1.7; margin: 8px 0 18px; }
+.cta { display: inline-block; border: 1px solid #a6e22e; color: #a6e22e; padding: 11px 16px; text-decoration: none; border-radius: 8px; font: 700 .95rem 'Silkscreen', monospace; }
+.cta:hover { color: #071008; background: #a6e22e; }
+.page-lead { text-align: center; padding: 42px 20px 18px; }
+.page-lead h1 { font: 700 clamp(1.35rem, 3.6vw, 2.15rem) 'Silkscreen', monospace; line-height: 1.3; color: #e9e9e9; margin: 12px auto; }
+.page-lead p:last-child { max-width: 65ch; margin: 0 auto; line-height: 1.7; color: #b9c7b9; }
+.lesson > summary.header { list-style: none; display: block; user-select: none; }
+.lesson > summary.header::-webkit-details-marker { display: none; }
+.lesson[open] > .header { border-radius: 12px 12px 0 0; margin-bottom: 0; }
+.lesson[open] > .header .token.grasstext::after { transform: rotate(180deg); }
+.lesson[open] > .accordion-content { display: block; }
+.lesson > .accordion-content { margin-bottom: 15px; }
+/* Original marquee is no longer used; a CSS ticker is accessible and standards-based. */
+.ticker { display: block; }
+@media (max-width: 768px) {
+  .page-lead { padding-top: 26px; }
+  .home-panel { margin-top: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
