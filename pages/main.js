@@ -1,10 +1,10 @@
 import { html, css, escapeHtml } from './template.js';
-import { firstpage } from './firstpage.js';
-import { secondpage } from './secondpage.js';
+import { portfolio } from './portfolio.js';
+import { aboutme } from './aboutme.js';
 
 const routes = Object.freeze({
-  home: { name: 'Portfolio', view: new firstpage() },
-  guides: { name: 'Terminal Guides', view: new secondpage() },
+  portfolio: { name: 'Portfolio', view: new portfolio() },
+  about: { name: 'About Me', view: new aboutme() },
 });
 
 // Original footer quotes, retained from the uploaded HTML.
@@ -92,11 +92,10 @@ export class main {
     return html`
       <div class="site-shell">
         <header class="site-header">
-          <a class="brand" href="#/home">JVSB<span> / ProDev</span></a>
+          <a class="brand" href="#/portfolio">JVSB<span> / ProDev</span></a>
           <nav class="site-nav" aria-label="Primary navigation">
-            <a href="#/home" data-route="home">jvsbProDev</a>
-            <a href="#/guides" data-route="guides">about me</a>
-            <button type="button" id="audio-toggle" aria-pressed="false" aria-label="Play background audio">♫ Audio: Off</button>
+            <a href="#/portfolio" data-route="portfolio">jvsbProDev</a>
+            <a href="#/about" data-route="about">about me</a>
           </nav>
         </header>
         <main id="page-content" tabindex="-1"></main>
@@ -128,7 +127,7 @@ export class main {
   navigate() {
     // Whitelist route names: never interpret the URL as HTML or a module path.
     const slug = window.location.hash.replace(/^#\/?/, '').split('?')[0];
-    const key = Object.hasOwn(routes, slug) ? slug : 'home';
+    const key = Object.hasOwn(routes, slug) ? slug : 'portfolio';
     const page = routes[key].view;
     const panel = this.root.querySelector('#page-content');
     panel.innerHTML = page.render();
